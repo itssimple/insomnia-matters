@@ -58,7 +58,7 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 dependencies {
     implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
     //compileOnly project(":common")
-    annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+    annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
 
     implementation "se.itssimple.obsidianweave:obsidianweave-forge:${minecraft_version}-${obsidianweave_version}"
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
@@ -68,12 +68,4 @@ sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
-}
-
-jar {
-    manifest {
-        attributes([
-                "MixinConfigs" : "insomniamatters-forge.mixins.json" // mixin
-        ])
-    }
 }

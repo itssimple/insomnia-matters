@@ -31,7 +31,7 @@ public class ModCommon {
 	 */
 	private static void load() {
 		CONFIG = se.itssimple.obsidianweave.ModCommon.registerConfig(Reference.MOD_ID, builder -> {
-			DAYS_AWAKE_BEFORE_EVENTS = builder.define("days_awake_before_events", 500.0 /*2.5 * 24000*/);
+			DAYS_AWAKE_BEFORE_EVENTS = builder.define("days_awake_before_events", 2.5 * 24000);
 		});
 	}
 }

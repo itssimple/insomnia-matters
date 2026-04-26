@@ -26,3 +26,6 @@ description='''${description}'''
     versionRange="[${obsidianweave_version},)"
     ordering="AFTER"
     side="SERVER"
+
+[[mixins]]
+    config="insomniamatters.mixins.json"

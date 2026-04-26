@@ -16,8 +16,8 @@ import se.itssimple.insomniamatters.sleep.SleepManager;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerTickMixin {
-    @Inject(method = "tick", at = @At(value = "TAIL"))
-    private void onPlayerTick(CallbackInfo ci) {
+    @Inject(method = "tick", at = @At(value = "TAIL"), remap = false)
+    private void tick(CallbackInfo ci) {
         ServerPlayer player = (ServerPlayer)(Object)this;
         Level level = player.level();
 
@@ -34,7 +34,7 @@ public class ServerPlayerTickMixin {
 
         if(value % 20 == 0)
         {
-            Constants.LOG.info("Tick {}, configured value {}", value, ModCommon.DAYS_AWAKE_BEFORE_EVENTS.getValue());
+            //Constants.LOG.info("Tick {}, configured value {}", value, ModCommon.DAYS_AWAKE_BEFORE_EVENTS.getValue());
         }
 
         if (random.nextInt(value) >= ModCommon.DAYS_AWAKE_BEFORE_EVENTS.getValue()) {
